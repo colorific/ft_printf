@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:31:33 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/17 19:12:47 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/17 22:05:13 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int				ft_dprintf(int fd, const char *restrict format, ...)
 	{
 		if (*tprint.str == '%')
 		{
-			tprint.str++;
 			parse_format(&tprint);
 			print_arg(&tprint);
 		}
@@ -50,7 +49,6 @@ int				ft_printf(const char *restrict format, ...)
 	{
 		if (*tprint.str == '%')
 		{
-			tprint.str++;
 			parse_format(&tprint);
 			print_arg(&tprint);
 		}
