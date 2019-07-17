@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/13 18:56:38 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/17 19:01:14 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 int	main(void)
 {
-	char				ch_min = CHAR_MIN;
+/* 	char				ch_min = CHAR_MIN;
 	char				ch_max = CHAR_MAX;
 	unsigned char		u_ch_max = UCHAR_MAX;
 	short				shrt_min = SHRT_MIN;
@@ -34,7 +34,15 @@ int	main(void)
 	float				f = 0.0;
 	double				d = 0.0;
 	long double			l_d = 1.1;
+ */
+/* 	t_printf			print;
 
+	ft_bzero(&print, sizeof(t_printf));
+	print.flag |= L_BIGL;
+
+	if (!(print.flag ^ L_HH))
+		printf ("YES!!!!\n");
+ *//*
 	printf("%c\n", ch_min - 1);
 	printf("%c\n", ch_max);
 	printf("%c\n", u_ch_max);
@@ -56,8 +64,10 @@ int	main(void)
 	printf("%hhd\n", (char)i_max);
 
 	printf("%f\n", 0.0/0.1);
-
-	ft_printf("avbcx", ch_max);
+	printf("%*.d\n", -6, 5);
+ */
+	ft_printf("avbcx\n");
+	ft_dprintf(2, "abc\n");
 
 	return (0);
 }

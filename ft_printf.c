@@ -6,41 +6,61 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:31:33 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/13 19:01:06 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/17 19:12:47 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parse_format(char **str, int *printed, va_list *args)
+int				ft_dprintf(int fd, const char *restrict format, ...)
 {
-	++(*str);
-	(void)args;
-	if (**str == 'd')
-		;
-	++(*printed);
-}
+	t_printf	tprint;
 
-int	ft_printf(const char *restrict format, ...)
-{
-	int		printed;
-	va_list	args;
-	char	*str;
-
-	printed = 0;
-	str = (char*)format;
-	va_start(args, format);
-	while (*str)
+	ft_bzero(&tprint, sizeof(t_printf));
+	tprint.str = (char*)format;
+	tprint.fd = fd;
+	va_start(tprint.args, format);
+	while (*tprint.str)
 	{
-		if (*str == '%')
-			parse_format(&str, &printed, &args);
+		if (*tprint.str == '%')
+		{
+			tprint.str++;
+			parse_format(&tprint);
+			print_arg(&tprint);
+		}
 		else
 		{
-			write(1, &*str, 1);
-			str++;
-			printed++;
+			write(fd, &*tprint.str, 1);
+			tprint.str++;
+			tprint.printed++;
 		}
 	}
-	va_end(args);
-	return (printed);
+	va_end(tprint.args);
+	return (tprint.printed);
+}
+
+int				ft_printf(const char *restrict format, ...)
+{
+	t_printf	tprint;
+
+	ft_bzero(&tprint, sizeof(t_printf));
+	tprint.str = (char*)format;
+	va_start(tprint.args, format);
+	while (*tprint.str)
+	{
+		if (*tprint.str == '%')
+		{
+			tprint.str++;
+			parse_format(&tprint);
+			print_arg(&tprint);
+		}
+		else
+		{
+			write(1, &*tprint.str, 1);
+			tprint.str++;
+			tprint.printed++;
+		}
+	}
+	va_end(tprint.args);
+	return (tprint.printed);
 }

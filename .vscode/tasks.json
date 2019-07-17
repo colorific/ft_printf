@@ -9,10 +9,12 @@
                 "-Wextra",
                 "-Werror",
                 "-g",
-                "${file}",
-                "${fileDirname}/main.c",
+   //             "${file}",
+                "${fileDirname}/*.c",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}"
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-L./denis_printf/libft/",
+                "-lft"
             ],
             "options": {
                 "cwd": "${cwd}"
