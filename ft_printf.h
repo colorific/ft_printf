@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/17 18:45:49 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/19 18:04:30 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,6 @@ int					ft_printf(const char *restrict format, ...);
 int					ft_dprintf(int fd, const char *restrict format, ...);
 void				print_arg(t_printf *tprint);
 void				parse_format(t_printf *tprint);
+int					check_ptr(t_printf *tprint);
 
 #endif

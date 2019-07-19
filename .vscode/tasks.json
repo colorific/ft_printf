@@ -5,9 +5,9 @@
             "label": "gcc build active file",
             "command": "/usr/bin/gcc",
             "args": [
-//                "-Wall",
-//                "-Wextra",
-//                "-Werror",
+ //               "-Wall",
+ //               "-Wextra",
+ //               "-Werror",
                 "-g",
    //             "${file}",
                 "${fileDirname}/*.c",

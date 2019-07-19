@@ -6,17 +6,16 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/17 22:08:36 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/19 19:52:25 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <limits.h>
 #include "ft_printf.h"
 
 int	main(void)
 {
-/* 	char				ch_min = CHAR_MIN;
+ 	char				ch_min = CHAR_MIN;
 	char				ch_max = CHAR_MAX;
 	unsigned char		u_ch_max = UCHAR_MAX;
 	short				shrt_min = SHRT_MIN;
@@ -34,7 +33,7 @@ int	main(void)
 	float				f = 0.0;
 	double				d = 0.0;
 	long double			l_d = 1.1;
- */
+
 /* 	t_printf			print;
 
 	ft_bzero(&print, sizeof(t_printf));
@@ -63,8 +62,8 @@ int	main(void)
 	printf("%Lf\n", l_d);
 	printf("%hhd\n", (char)i_max);
 */
-	printf("%f\n", 0.1/1);
-	printf("%X !destiny\n", -6, 5);
+//	printf("%f\n", 0.1/1);
+//	printf("%X !destiny\n", -6, 5);
 
 	/*
 	* принтф читает последовательность только пока она валидная.
@@ -74,9 +73,11 @@ int	main(void)
 	* Надо как-то обойти сегу при попытке обращения к невалидному указателю. Пример:
 	* printf ("%s", -5);
 	*/
-
+	printf("%7\n", shrt_max);
+//	ft_printf("%s", 6);
+/*
 	ft_printf("avbcx\n", "str");
 	ft_dprintf(2, "abc\n");
-
+ */
 	return (0);
 }

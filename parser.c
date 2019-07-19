@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/18 20:37:38 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/19 19:12:12 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,12 @@ void	parse_format(t_printf *tprint)
 	parse_prec(tprint);
 	parse_lenght(tprint);
 	/*	дальше начинается обработка типов */
+	if (*tprint->str == 'd')
+		tprint->type = *tprint->str;
+	else if (*tprint->str == 'f')
+		tprint->type = *tprint->str;
+	else if (*tprint->str == 'c' || *tprint->str == 's')
+		tprint->type = *tprint->str;
+	else
+		;
 }
