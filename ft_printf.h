@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/19 18:04:30 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/24 21:33:14 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <limits.h>						//debug
 # include "./denis_printf/libft/libft.h"	//debug
 
+# define TYPE_NUM	11
 # define F_MINUS	(1 << 0)
 # define F_PLUS		(1 << 1)
 # define F_SPACE	(1 << 2)
@@ -30,23 +31,29 @@
 # define L_L		(1 << 8)
 # define L_BIGL		(1 << 9)
 
-
 typedef struct		s_printf
 {
 	int				printed;
 	unsigned short	flag;
 	int				width;
 	int				prec;
-	char			type;
 	int				fd;
 	va_list			args;
 	char			*str;
 }					t_printf;
 
+typedef char		*(*t_handler)(t_printf *tprint);
+
+typedef struct		s_func
+{
+	t_handler		func;
+	char			ch;
+}					t_func;
+
 int					ft_printf(const char *restrict format, ...);
 int					ft_dprintf(int fd, const char *restrict format, ...);
-void				print_arg(t_printf *tprint);
-void				parse_format(t_printf *tprint);
+void				print_arg(char *str, t_printf *tprint);
+char				*parse_format(t_printf *tprint);
 int					check_ptr(t_printf *tprint);
 
 #endif
