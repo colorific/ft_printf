@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/24 21:33:14 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/25 17:24:43 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,15 @@ int					ft_dprintf(int fd, const char *restrict format, ...);
 void				print_arg(char *str, t_printf *tprint);
 char				*parse_format(t_printf *tprint);
 int					check_ptr(t_printf *tprint);
+char				*ft_str_type(t_printf *tprint);
+char				*ft_char_type(t_printf *tprint);
+char				*ft_ptr_type(t_printf *tprint);
+char				*ft_int_type(t_printf *tprint);
+char				*ft_oct_type(t_printf *tprint);
+char				*ft_unsgn_type(t_printf *tprint);
+char				*ft_hex_type(t_printf *tprint);
+char				*ft_bhex_type(t_printf *tprint);
+char				*ft_float_type(t_printf *tprint);
+char				*ft_perc_type(t_printf *tprint);
 
 #endif

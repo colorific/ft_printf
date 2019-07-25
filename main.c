@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/25 11:04:20 by kirill           ###   ########.fr       */
+/*   Updated: 2019/07/25 17:09:56 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,15 +73,10 @@ int	main(void)
 	* Надо как-то обойти сегу при попытке обращения к невалидному указателю. Пример:
 	* printf ("%s", -5);
 	*/
-
-	int x = 246;
-
-	while (x)
-		x = x&(x-1);
-	printf("%7ud\n", -1);
+//	printf("%7ud\n", -1);
 	ft_printf("% #+s", 6);
 //	printf("%7\n", shrt_max);
-	ft_printf("%s", 6);
+//	ft_printf("%s", 6);
 /*
 	ft_printf("avbcx\n", "str");
 	ft_dprintf(2, "abc\n");
