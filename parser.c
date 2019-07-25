@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/19 19:12:12 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/23 13:33:28 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,15 @@ void	parse_width(t_printf *tprint)
 
 void	parse_flags(t_printf *tprint)
 {
-	(void)tprint;
+	char *flag;
+	char *haystack;
+
+	haystack = ft_strdup("-+ 0#");
+	while (*tprint->str && (flag = ft_strchr(haystack, *tprint->str)) > 0)
+	{
+		tprint->flag |= (1 << (flag - haystack));
+		tprint->str++;
+	}
 }
 
 void	parse_format(t_printf *tprint)
