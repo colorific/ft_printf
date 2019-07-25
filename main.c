@@ -6,7 +6,7 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/23 13:33:22 by kirill           ###   ########.fr       */
+/*   Updated: 2019/07/25 11:04:20 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_printf.h"
 
 int	main(void)
-{
+{/*
  	char				ch_min = CHAR_MIN;
 	char				ch_max = CHAR_MAX;
 	unsigned char		u_ch_max = UCHAR_MAX;
@@ -33,7 +33,7 @@ int	main(void)
 	float				f = 0.0;
 	double				d = 0.0;
 	long double			l_d = 1.1;
-
+ */
 /* 	t_printf			print;
 
 	ft_bzero(&print, sizeof(t_printf));
@@ -80,6 +80,8 @@ int	main(void)
 		x = x&(x-1);
 	printf("%7ud\n", -1);
 	ft_printf("% #+s", 6);
+//	printf("%7\n", shrt_max);
+	ft_printf("%s", 6);
 /*
 	ft_printf("avbcx\n", "str");
 	ft_dprintf(2, "abc\n");
