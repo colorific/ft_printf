@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/25 17:24:43 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/26 12:46:18 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ char				*ft_hex_type(t_printf *tprint);
 char				*ft_bhex_type(t_printf *tprint);
 char				*ft_float_type(t_printf *tprint);
 char				*ft_perc_type(t_printf *tprint);
+void				ft_init_table(t_func *table);
 
 #endif

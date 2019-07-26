@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/25 17:09:56 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/26 13:19:48 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,26 @@ int	main(void)
 	* printf ("%s", -5);
 	*/
 //	printf("%7ud\n", -1);
+
+		union
+		{
+			long double ldb;
+			short exp;
+			unsigned long long mant;
+		} u_float;
+
+	float fl = 1.1;
+	double db = 1.1;
+	long double ldb1 = 1.1;
+	long long mask = 1;
+	(void)mask;
+
+	u_float.ldb = ldb1;
+
+	printf ("%f\n", fl);
+	printf("%lf\n", db);
+	printf("%Lf\n", ldb1);
+
 	ft_printf("% #+s", 6);
 //	printf("%7\n", shrt_max);
 //	ft_printf("%s", 6);
