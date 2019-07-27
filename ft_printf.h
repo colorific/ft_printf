@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/26 12:46:18 by kirill           ###   ########.fr       */
+/*   Updated: 2019/07/27 18:22:26 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
 # define F_HASH		(1 << 4)
 # define L_HH		(1 << 5)
 # define L_H		(1 << 6)
-# define L_LL		(1 << 7)
-# define L_L		(1 << 8)
+# define L_L		(1 << 7)
+# define L_LL		(1 << 8)
 # define L_BIGL		(1 << 9)
 
 typedef struct		s_printf
@@ -52,9 +52,10 @@ typedef struct		s_func
 
 int					ft_printf(const char *restrict format, ...);
 int					ft_dprintf(int fd, const char *restrict format, ...);
+
 void				print_arg(char *str, t_printf *tprint);
 char				*parse_format(t_printf *tprint);
-int					check_ptr(t_printf *tprint);
+
 char				*ft_str_type(t_printf *tprint);
 char				*ft_char_type(t_printf *tprint);
 char				*ft_ptr_type(t_printf *tprint);
@@ -65,6 +66,7 @@ char				*ft_hex_type(t_printf *tprint);
 char				*ft_bhex_type(t_printf *tprint);
 char				*ft_float_type(t_printf *tprint);
 char				*ft_perc_type(t_printf *tprint);
+
 void				ft_init_table(t_func *table);
 
 #endif

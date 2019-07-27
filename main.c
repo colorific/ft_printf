@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/26 13:19:48 by kirill           ###   ########.fr       */
+/*   Updated: 2019/07/27 18:37:44 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ft_printf.h"
 
 int	main(void)
-{/*
+{
  	char				ch_min = CHAR_MIN;
 	char				ch_max = CHAR_MAX;
 	unsigned char		u_ch_max = UCHAR_MAX;
@@ -33,7 +33,7 @@ int	main(void)
 	float				f = 0.0;
 	double				d = 0.0;
 	long double			l_d = 1.1;
- */
+
 /* 	t_printf			print;
 
 	ft_bzero(&print, sizeof(t_printf));
@@ -93,8 +93,11 @@ int	main(void)
 	printf ("%f\n", fl);
 	printf("%lf\n", db);
 	printf("%Lf\n", ldb1);
+	printf("%5hh07d\n", 5); 			/* флаги учитываются всегда */
+	printf("%lllhhLLhQQ\n", 5);		/* спецификатор длины всегда читается */
+	printf("%hhd\n", shrt_min);
 
-	ft_printf("% #+s", 6);
+	ft_printf("% #+0 0667s\n", 6);
 //	printf("%7\n", shrt_max);
 //	ft_printf("%s", 6);
 /*

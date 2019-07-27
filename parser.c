@@ -6,28 +6,13 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/25 17:28:29 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/27 18:44:19 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parse_lenght(t_printf *tprint)
-{
-	(void)tprint;
-}
-
-void	parse_prec(t_printf *tprint)
-{
-	(void)tprint;
-}
-
-void	parse_width(t_printf *tprint)
-{
-	(void)tprint;
-}
-
-void	parse_flags(t_printf *tprint)
+static void	parse_flags(t_printf *tprint)
 {
 	char *flag;
 	char *haystack;
@@ -38,6 +23,49 @@ void	parse_flags(t_printf *tprint)
 		tprint->flag |= (1 << (flag - haystack));
 		tprint->str++;
 	}
+	tprint->flag & F_ZERO && tprint->flag & F_MINUS ? \
+		tprint->flag &= ~F_ZERO : 0;
+	tprint->flag & F_PLUS && tprint->flag & F_SPACE ? \
+		tprint->flag &= ~F_SPACE : 0;
+}
+
+static void	parse_width(t_printf *tprint)
+{
+	if (*tprint->str == '*')
+	{
+		tprint->width = va_arg(tprint->args, int);
+		tprint->str++;
+		return ;
+	}
+	if (ft_isdigit(*tprint->str))
+		tprint->width = ft_atoi(tprint->str);
+	while (ft_isdigit(*tprint->str))
+		tprint->str++;
+}
+
+static void	parse_prec(t_printf *tprint)
+{
+	if (*tprint->str != '.')
+		return ;
+	else
+	{
+		tprint->str++;
+		if (*tprint->str == '*')
+		{
+			tprint->prec = va_arg(tprint->args, int);
+			tprint->str++;
+			return ;
+		}
+		if (ft_isdigit(*tprint->str))
+			tprint->prec = ft_atoi(tprint->str);
+		while (ft_isdigit(*tprint->str))
+			tprint->str++;
+	}
+}
+
+static void	parse_lenght(t_printf *tprint)
+{
+	(void)(tprint);
 }
 
 char	*parse_format(t_printf *tprint)
