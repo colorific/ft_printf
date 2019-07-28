@@ -91,4 +91,6 @@ Temporary Items
 # Ignore all local history of files
 .history
 
+# binary files
+bin/*
 # End of https://www.gitignore.io/api/c,osx,visualstudiocode

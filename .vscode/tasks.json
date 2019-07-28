@@ -11,7 +11,7 @@
 //				"-Wextra",
                 "${fileDirname}/*.c",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}",
+                "${fileDirname}/bin/${fileBasenameNoExtension}",
                 "-L./denis_printf/libft/",
                 "-lft"
             ],
