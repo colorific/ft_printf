@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/27 18:37:44 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:58:18 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,12 @@ int	main(void)
 	unsigned long long	u_ll_i_max = ULLONG_MAX;
 	float				f = 0.0;
 	double				d = 0.0;
-	long double			l_d = 1.1;
+	long double			l_d = 1.3;
+
+	float fl = 1.3;
+	double db = 1.1;
+	long double ldb1 = 1.1;
+
 
 /* 	t_printf			print;
 
@@ -74,7 +79,7 @@ int	main(void)
 	* printf ("%s", -5);
 	*/
 //	printf("%7ud\n", -1);
-
+/*
 		union
 		{
 			long double ldb;
@@ -82,14 +87,28 @@ int	main(void)
 			unsigned long long mant;
 		} u_float;
 
-	float fl = 1.1;
-	double db = 1.1;
-	long double ldb1 = 1.1;
 	long long mask = 1;
 	(void)mask;
 
 	u_float.ldb = ldb1;
 
+	db = 1.3;
+	printf("LONG DOUBLE\n");
+	printf("%.50Lf Lf\n", l_d);
+	printf("%.50f f\n", l_d);
+	printf("%.50lf lf\n", l_d);
+	printf("\nDOUBLE\n");
+	printf("%.50Lf Lf\n", db);
+	printf("%.50f f\n", db);
+	printf("%.50lf lf\n", db);
+	printf("\nFLOAT\n");
+	printf("%.50Lf Lf\n", fl);
+	printf("%.50f f\n", fl);
+	printf("%.50lf lf\n\n", fl);
+*/
+
+	char *a = "Ё";
+	printf("%c\n", a);
 	printf ("%f\n", fl);
 	printf("%lf\n", db);
 	printf("%Lf\n", ldb1);
