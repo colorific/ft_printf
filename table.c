@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:20:25 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/25 17:21:06 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/30 20:59:38 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 static t_func	ft_add_table(char type, char *(*func)(t_printf *tprint))
 {
-	t_func out;
+	t_func		out;
 
 	out.ch = type;
 	out.func = func;
 	return (out);
 }
 
-void	ft_init_table(t_func *table)
+void			ft_init_table(t_func *table)
 {
 	table[0] = ft_add_table('s', ft_str_type);
 	table[1] = ft_add_table('c', ft_char_type);

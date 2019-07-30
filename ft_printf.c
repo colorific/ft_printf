@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:31:33 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/24 21:35:30 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/30 22:37:18 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int				ft_dprintf(int fd, const char *restrict format, ...)
 {
 	t_printf	tprint;
+	t_func		f_table[TYPE_NUM];
 
+	ft_init_table(f_table);
 	ft_bzero(&tprint, sizeof(t_printf));
 	tprint.str = (char*)format;
 	tprint.fd = fd;
@@ -25,7 +27,7 @@ int				ft_dprintf(int fd, const char *restrict format, ...)
 		if (*tprint.str == '%')
 		{
 			tprint.str++;
-			print_arg(parse_format(&tprint), &tprint);
+			print_arg(parse_format(&tprint, f_table), &tprint);
 		}
 		else
 		{
@@ -41,20 +43,23 @@ int				ft_dprintf(int fd, const char *restrict format, ...)
 int				ft_printf(const char *restrict format, ...)
 {
 	t_printf	tprint;
+	t_func		f_table[TYPE_NUM];
 
+	ft_init_table(f_table);
 	ft_bzero(&tprint, sizeof(t_printf));
 	tprint.str = (char*)format;
+	tprint.fd = 1;
 	va_start(tprint.args, format);
 	while (*tprint.str)
 	{
 		if (*tprint.str == '%')
 		{
 			tprint.str++;
-			print_arg(parse_format(&tprint), &tprint);
+			print_arg(parse_format(&tprint, f_table), &tprint);
 		}
 		else
 		{
-			write(1, &*tprint.str, 1);
+			write(tprint.fd, &*tprint.str, 1);
 			tprint.str++;
 			tprint.printed++;
 		}

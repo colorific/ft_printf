@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/27 18:44:19 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/30 21:47:52 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	parse_flags(t_printf *tprint)
 {
-	char *flag;
-	char *haystack;
+	char	*flag;
+	char	*haystack;
 
 	haystack = ft_strdup("-+ 0#");
 	while (*tprint->str && (flag = ft_strchr(haystack, *tprint->str)) > 0)
@@ -49,6 +49,7 @@ static void	parse_prec(t_printf *tprint)
 		return ;
 	else
 	{
+		tprint->flag |= F_PREC;
 		tprint->str++;
 		if (*tprint->str == '*')
 		{
@@ -65,12 +66,26 @@ static void	parse_prec(t_printf *tprint)
 
 static void	parse_lenght(t_printf *tprint)
 {
-	(void)(tprint);
+	if (*tprint->str == 'h')
+	{
+		if (*(tprint->str + 1) == 'h')
+			tprint->flag |= L_HH;
+		else
+			tprint->flag |= L_H;
+	}
+	else if (*tprint->str == 'l')
+	{
+		if (*(tprint->str + 1) == 'l')
+			tprint->flag |= L_LL;
+		else
+			tprint->flag |= L_L;
+	}
+	else if (*tprint->str == 'L')
+		tprint->flag |= L_BIGL;
 }
 
-char	*parse_format(t_printf *tprint)
+char		*parse_format(t_printf *tprint, t_func f_table[])
 {
-	t_func	f_table[TYPE_NUM];
 	int		i;
 
 	i = 0;
@@ -78,8 +93,6 @@ char	*parse_format(t_printf *tprint)
 	parse_width(tprint);
 	parse_prec(tprint);
 	parse_lenght(tprint);
-	/*	дальше начинается обработка типов */
-	ft_init_table(f_table);
 	while (i < TYPE_NUM)
 	{
 		if (*tprint->str == f_table[i].ch)

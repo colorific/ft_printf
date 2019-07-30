@@ -6,11 +6,12 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/28 22:58:18 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/30 22:41:03 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <limits.h>
 #include "ft_printf.h"
 
 int	main(void)
@@ -107,16 +108,30 @@ int	main(void)
 	printf("%.50lf lf\n\n", fl);
 */
 
-	char *a = "Ё";
-	printf("%c\n", a);
-	printf ("%f\n", fl);
-	printf("%lf\n", db);
-	printf("%Lf\n", ldb1);
-	printf("%5hh07d\n", 5); 			/* флаги учитываются всегда */
-	printf("%lllhhLLhQQ\n", 5);		/* спецификатор длины всегда читается */
-	printf("%hhd\n", shrt_min);
+	wchar_t *a = L"Ё";
+	printf("%s\n", "my 123");
+	printf("%2s\n", "my 123");
+	printf("%10s\n", "my 123");
+	printf("%-10.4s\n", "my 123");
+	printf("%10.4s\n", "my 123");
+	int out = printf("%.s", "my 123");
+	printf ("out = %d\n", out);
+	printf("%-10.4s\n", "my 123");
+	printf("%10.15s\n", "my 123");
+	printf("%10.1s\n", "my 123");
+	printf("%2.1s\n", "my 123");
+	printf("%2.3s\n", "my 123");
+	printf("%-2.3s\n", "my 123");
 
-	ft_printf("% #+0 0667s\n", 6);
+//	printf ("%f\n", fl);
+//	printf("%lf\n", db);
+//	printf("%Lf\n", ldb1);
+//	printf("%5hh07d\n", 5); 			/* флаги учитываются всегда */
+//	printf("%hL hhdQQ\n", 5000000);		/* спецификатор длины всегда читается */
+//	printf("%hhd\n", shrt_min);
+//	printf("% #+0 06d\n", 6);
+//
+//	ft_printf("% #+0 0667s\n", 6);
 //	printf("%7\n", shrt_max);
 //	ft_printf("%s", 6);
 /*
