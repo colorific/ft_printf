@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/30 21:47:17 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/31 21:18:45 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,11 @@ typedef struct		s_printf
 	int				prec;
 	int				fd;
 	va_list			args;
+	char			type;
 	char			*str;
 }					t_printf;
 
-typedef char		*(*t_handler)(t_printf *tprint);
+typedef int			(*t_handler)(t_printf *tprint);
 
 typedef struct		s_func
 {
@@ -54,18 +55,17 @@ int					ft_printf(const char *restrict format, ...);
 int					ft_dprintf(int fd, const char *restrict format, ...);
 
 void				print_arg(char *str, t_printf *tprint);
-char				*parse_format(t_printf *tprint, t_func f_table[]);
+int					parse_format(t_printf *tprint, t_func f_table[]);
 
-char				*ft_str_type(t_printf *tprint);
-char				*ft_char_type(t_printf *tprint);
-char				*ft_ptr_type(t_printf *tprint);
-char				*ft_int_type(t_printf *tprint);
-char				*ft_oct_type(t_printf *tprint);
-char				*ft_unsgn_type(t_printf *tprint);
-char				*ft_hex_type(t_printf *tprint);
-char				*ft_bhex_type(t_printf *tprint);
-char				*ft_float_type(t_printf *tprint);
-char				*ft_perc_type(t_printf *tprint);
+int					ft_str_type(t_printf *tprint);
+int					ft_char_type(t_printf *tprint);
+int					ft_ptr_type(t_printf *tprint);
+int					ft_int_type(t_printf *tprint);
+int					ft_oct_type(t_printf *tprint);
+int					ft_unsgn_type(t_printf *tprint);
+int					ft_hex_type(t_printf *tprint);
+int					ft_bhex_type(t_printf *tprint);
+int					ft_float_type(t_printf *tprint);
 
 void				ft_init_table(t_func *table);
 

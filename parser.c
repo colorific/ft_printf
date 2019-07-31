@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/30 21:47:52 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/31 20:25:46 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ static void	parse_flags(t_printf *tprint)
 		tprint->flag &= ~F_ZERO : 0;
 	tprint->flag & F_PLUS && tprint->flag & F_SPACE ? \
 		tprint->flag &= ~F_SPACE : 0;
+	ft_memdel((void**)&haystack);
 }
 
 static void	parse_width(t_printf *tprint)
@@ -84,7 +85,7 @@ static void	parse_lenght(t_printf *tprint)
 		tprint->flag |= L_BIGL;
 }
 
-char		*parse_format(t_printf *tprint, t_func f_table[])
+int			parse_format(t_printf *tprint, t_func f_table[])
 {
 	int		i;
 
@@ -99,5 +100,5 @@ char		*parse_format(t_printf *tprint, t_func f_table[])
 			return (f_table[i].func(tprint));
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

@@ -6,13 +6,13 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:20:25 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/30 20:59:38 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/31 21:14:41 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static t_func	ft_add_table(char type, char *(*func)(t_printf *tprint))
+static t_func	ft_add_table(char type, int (*func)(t_printf *tprint))
 {
 	t_func		out;
 
@@ -33,5 +33,5 @@ void			ft_init_table(t_func *table)
 	table[7] = ft_add_table('x', ft_hex_type);
 	table[8] = ft_add_table('X', ft_bhex_type);
 	table[9] = ft_add_table('f', ft_float_type);
-	table[10] = ft_add_table('%', ft_perc_type);
+	table[10] = ft_add_table('%', ft_char_type);
 }

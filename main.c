@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/30 22:41:03 by forange-         ###   ########.fr       */
+/*   Updated: 2019/07/31 21:17:35 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int	main(void)
 {
+	/*
  	char				ch_min = CHAR_MIN;
 	char				ch_max = CHAR_MAX;
 	unsigned char		u_ch_max = UCHAR_MAX;
@@ -38,7 +39,7 @@ int	main(void)
 	float fl = 1.3;
 	double db = 1.1;
 	long double ldb1 = 1.1;
-
+ */
 
 /* 	t_printf			print;
 
@@ -108,7 +109,14 @@ int	main(void)
 	printf("%.50lf lf\n\n", fl);
 */
 
-	wchar_t *a = L"Ё";
+//	wchar_t *a = L"Ё";
+
+//	printf("%s\n", L"Ё");
+//	printf("%ls\n", L"Ё");
+//	printf("%c\n", L'Ё');
+//	printf("%lc\n", L'Ё');
+//	printf("%ls\n", "Ё");
+/*
 	printf("%s\n", "my 123");
 	printf("%2s\n", "my 123");
 	printf("%10s\n", "my 123");
@@ -120,9 +128,10 @@ int	main(void)
 	printf("%10.15s\n", "my 123");
 	printf("%10.1s\n", "my 123");
 	printf("%2.1s\n", "my 123");
+	printf("%10.s\n", "my 123");
 	printf("%2.3s\n", "my 123");
 	printf("%-2.3s\n", "my 123");
-
+ */
 //	printf ("%f\n", fl);
 //	printf("%lf\n", db);
 //	printf("%Lf\n", ldb1);
@@ -131,7 +140,24 @@ int	main(void)
 //	printf("%hhd\n", shrt_min);
 //	printf("% #+0 06d\n", 6);
 //
-//	ft_printf("% #+0 0667s\n", 6);
+//	ft_printf("%-4.2s\n", "12345");
+	//printf("%-4.2s\n", "12345");
+
+//	ft_printf("%4.2s\n", "12345");
+	//printf("%4.2s\n", "12345");
+//	printf("%4c\n", 'a');
+//	ft_printf("%4c\n", 'a');
+//	printf("%-4c\n", 'a');
+//	ft_printf("%-4c\n", 'a');
+
+	printf("%%\n");
+	ft_printf("%%\n");
+
+	printf("%4%\n");
+	ft_printf("%4%\n");
+
+	printf("%-4%\n");
+	ft_printf("%-4%\n");
 //	printf("%7\n", shrt_max);
 //	ft_printf("%s", 6);
 /*
