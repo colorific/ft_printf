@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/31 21:17:35 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/01 15:01:53 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,13 +143,13 @@ int	main(void)
 //	ft_printf("%-4.2s\n", "12345");
 	//printf("%-4.2s\n", "12345");
 
-//	ft_printf("%4.2s\n", "12345");
+	ft_printf("%4.2s\n", "12345");
 	//printf("%4.2s\n", "12345");
 //	printf("%4c\n", 'a');
 //	ft_printf("%4c\n", 'a');
 //	printf("%-4c\n", 'a');
 //	ft_printf("%-4c\n", 'a');
-
+/*
 	printf("%%\n");
 	ft_printf("%%\n");
 
@@ -158,6 +158,11 @@ int	main(void)
 
 	printf("%-4%\n");
 	ft_printf("%-4%\n");
+	 */
+
+	int out = printf("%10.s\n", NULL);
+	printf("%d\n", out);
+
 //	printf("%7\n", shrt_max);
 //	ft_printf("%s", 6);
 /*

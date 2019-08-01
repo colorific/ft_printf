@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   strings_type.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 20:54:26 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/31 20:54:43 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/01 12:59:06 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,7 @@ int			ft_str_type(t_printf *tprint)
 	out = va_arg(tprint->args, char *);
 	if (tprint->flag & F_PREC && !tprint->prec && !tprint->width)
 		return (0);
+	if (!out)
+		return(ft_str_gen("(null)", tprint));
 	return (ft_str_gen(out, tprint));
 }

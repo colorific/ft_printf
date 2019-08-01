@@ -12,6 +12,7 @@
                 "${fileDirname}/*.c",
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}",
+                "-I./denis_printf/libft/",
                 "-L./denis_printf/libft/",
                 "-lft"
             ],
