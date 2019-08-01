@@ -6,7 +6,7 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/01 15:01:53 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/02 00:33:25 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,7 +143,7 @@ int	main(void)
 //	ft_printf("%-4.2s\n", "12345");
 	//printf("%-4.2s\n", "12345");
 
-	ft_printf("%4.2s\n", "12345");
+//	ft_printf("%4.2s\n", "12345");
 	//printf("%4.2s\n", "12345");
 //	printf("%4c\n", 'a');
 //	ft_printf("%4c\n", 'a');
@@ -159,9 +159,49 @@ int	main(void)
 	printf("%-4%\n");
 	ft_printf("%-4%\n");
 	 */
-
+	/*
 	int out = printf("%10.s\n", NULL);
 	printf("%d\n", out);
+ */
+/*
+	printf ("%p\n", (void*)0x0);
+	printf ("%p\n\n", a);
+
+	printf ("%10p\n", (void*)0x0);
+	printf ("%10p\n\n", a);
+
+	printf ("%-10p\n", (void*)0x0);
+	printf ("%-10p\n\n", a);
+
+	printf ("%p\n", NULL);
+	ft_printf("%p\n\n", (void*)0xff);
+
+	printf ("%lx\n", (long)-255);
+	printf ("%lx\n\n", (long)255);
+
+	printf ("%x\n", INT_MIN);
+	printf ("%x\n\n", INT_MAX);
+
+	printf ("%lx\n", LONG_MIN);
+	printf ("%lx\n\n", LONG_MAX);
+
+	printf ("%llx\n", LLONG_MIN);
+	printf ("%llx\n\n", LLONG_MAX);
+
+	printf("%15.1%%s\n", "test");
+	ft_printf("%15.1%%s\n", "test");
+
+	printf("%%#X INT_MAX ==  %#X\n", INT_MAX);
+	int out = printf("%42.8ls", L"");
+	printf("\nout = %d\n", out);
+	out = ft_printf("%42.8ls", L"");
+	printf("\nout = %d\n", out);
+ */
+	int out = printf("^.^/%56.19ls^.^/", L"┬─┬ ノ( ゜-゜ノ)");
+	printf("\nout_o = %d\n", out);
+	out = ft_printf("^.^/%56.19ls^.^/", L"┬─┬ ノ( ゜-゜ノ)");
+	printf("\nout_m = %d\n", out);
+
 
 //	printf("%7\n", shrt_max);
 //	ft_printf("%s", 6);

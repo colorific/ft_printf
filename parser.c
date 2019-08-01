@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/31 20:25:46 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/01 22:00:29 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ static void	parse_flags(t_printf *tprint)
 	char	*haystack;
 
 	haystack = ft_strdup("-+ 0#");
+	tprint->flag = 0;
 	while (*tprint->str && (flag = ft_strchr(haystack, *tprint->str)) > 0)
 	{
 		tprint->flag |= (1 << (flag - haystack));
@@ -32,6 +33,7 @@ static void	parse_flags(t_printf *tprint)
 
 static void	parse_width(t_printf *tprint)
 {
+	tprint->width = 0;
 	if (*tprint->str == '*')
 	{
 		tprint->width = va_arg(tprint->args, int);
@@ -46,6 +48,7 @@ static void	parse_width(t_printf *tprint)
 
 static void	parse_prec(t_printf *tprint)
 {
+	tprint->prec = 0;
 	if (*tprint->str != '.')
 		return ;
 	else
@@ -69,7 +72,7 @@ static void	parse_lenght(t_printf *tprint)
 {
 	if (*tprint->str == 'h')
 	{
-		if (*(tprint->str + 1) == 'h')
+		if (*tprint->str == 'h')
 			tprint->flag |= L_HH;
 		else
 			tprint->flag |= L_H;
@@ -83,6 +86,7 @@ static void	parse_lenght(t_printf *tprint)
 	}
 	else if (*tprint->str == 'L')
 		tprint->flag |= L_BIGL;
+	tprint->str += (tprint->flag & (L_L | L_H | L_BIGL)) ? 1 : 2;
 }
 
 int			parse_format(t_printf *tprint, t_func f_table[])

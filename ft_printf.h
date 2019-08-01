@@ -6,7 +6,7 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/01 14:59:49 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/01 18:17:41 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ typedef struct		s_printf
 	int				prec;
 	int				fd;
 	va_list			args;
-	char			type;
 	char			*str;
 }					t_printf;
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_handlers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:25:32 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/31 21:14:25 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/01 20:50:21 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 int			ft_ptr_type(t_printf *tprint)
 {
-	(void)tprint;
+	uintptr_t	ptr;
+	char		*out;
+
+	ptr = va_arg(tprint->args, uintptr_t);
+	out = ft_itoa((int)ptr);
+	write(1, out, ft_strlen(out));
 	return (0);
 }
 

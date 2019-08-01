@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   chr_type.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 21:07:46 by forange-          #+#    #+#             */
-/*   Updated: 2019/07/31 21:13:40 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/01 20:47:09 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int			ft_chr_gen(char c, t_printf *tprint)
+static int	ft_chr_gen(char c, t_printf *tprint)
 {
 	char	*filler;
 
@@ -35,7 +35,7 @@ int			ft_char_type(t_printf *tprint)
 		out = (char)va_arg(tprint->args, int);
 	else
 		out = '%';
-	tprint->type = *tprint->str++;
+	tprint->str++;
 	if (tprint->width <= 1)
 		write(tprint->fd, &out, 1);
 	return (tprint->width <= 1 ? 1 : ft_chr_gen(out, tprint));
