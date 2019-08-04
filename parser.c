@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/01 22:00:29 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/04 11:18:04 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,8 @@ static void	parse_lenght(t_printf *tprint)
 	}
 	else if (*tprint->str == 'L')
 		tprint->flag |= L_BIGL;
-	tprint->str += (tprint->flag & (L_L | L_H | L_BIGL)) ? 1 : 2;
+	if (tprint->flag & (L_L | L_H | L_BIGL | L_LL | L_HH))
+		tprint->str += (tprint->flag & (L_L | L_H | L_BIGL)) ? 1 : 2;
 }
 
 int			parse_format(t_printf *tprint, t_func f_table[])

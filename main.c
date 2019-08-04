@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/02 00:33:25 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/04 17:20:34 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,8 +176,8 @@ int	main(void)
 	printf ("%p\n", NULL);
 	ft_printf("%p\n\n", (void*)0xff);
 
-	printf ("%lx\n", (long)-255);
-	printf ("%lx\n\n", (long)255);
+	printf ("%lx\n", (long)-256);
+	printf ("%lx\n\n", (long)256);
 
 	printf ("%x\n", INT_MIN);
 	printf ("%x\n\n", INT_MAX);
@@ -197,17 +197,22 @@ int	main(void)
 	out = ft_printf("%42.8ls", L"");
 	printf("\nout = %d\n", out);
  */
-	int out = printf("^.^/%56.19ls^.^/", L"┬─┬ ノ( ゜-゜ノ)");
-	printf("\nout_o = %d\n", out);
-	out = ft_printf("^.^/%56.19ls^.^/", L"┬─┬ ノ( ゜-゜ノ)");
-	printf("\nout_m = %d\n", out);
 
+	printf("\\!/%46lc\\!/", 'P');
 
-//	printf("%7\n", shrt_max);
-//	ft_printf("%s", 6);
-/*
-	ft_printf("avbcx\n", "str");
-	ft_dprintf(2, "abc\n");
- */
+	printf("%#13.10x\n", 256);
+	printf("%#13.10hhx\n", (char)256);
+	printf("%#13.10hx\n", (unsigned short)256);
+	printf("%#13.10lx\n", (unsigned long)256);
+
+	int out = printf("%5.3s", "1Ёж");
+	printf("\nout = %d\n", out);
+	out = ft_printf("%5.3s", "1Ёж");
+	printf("\nout = %d\n", out);
+
+	out = printf("%.2ls", L"Ё");
+	printf("\nout = %d\n", out);
+	out = ft_printf("%.2ls", L"Ё");
+	printf("\nout = %d\n", out);
 	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   chr_type.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 21:07:46 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/01 20:47:09 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/04 14:59:35 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,20 @@ static int	ft_chr_gen(char c, t_printf *tprint)
 int			ft_char_type(t_printf *tprint)
 {
 	char	out;
+	char	w_out;
 
+	out = 0;
 	if (*tprint->str != '%')
-		out = (char)va_arg(tprint->args, int);
+	{
+		if (tprint->flag & L_L)
+			w_out = va_arg(tprint->args, wchar_t);
+		else
+			out = (char)va_arg(tprint->args, int);
+	}
 	else
 		out = '%';
 	tprint->str++;
 	if (tprint->width <= 1)
-		write(tprint->fd, &out, 1);
+		ft_putwchar_fd(out ? out : w_out, tprint->fd);
 	return (tprint->width <= 1 ? 1 : ft_chr_gen(out, tprint));
 }
