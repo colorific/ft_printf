@@ -6,12 +6,13 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/04 17:20:34 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/05 18:09:13 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <limits.h>
+#include <locale.h>
 #include "ft_printf.h"
 
 int	main(void)
@@ -197,14 +198,13 @@ int	main(void)
 	out = ft_printf("%42.8ls", L"");
 	printf("\nout = %d\n", out);
  */
-
-	printf("\\!/%46lc\\!/", 'P');
-
+	setlocale(LC_ALL, "en_US.UTF-8");
+	/*
 	printf("%#13.10x\n", 256);
 	printf("%#13.10hhx\n", (char)256);
 	printf("%#13.10hx\n", (unsigned short)256);
 	printf("%#13.10lx\n", (unsigned long)256);
-
+ */
 	int out = printf("%5.3s", "1Ёж");
 	printf("\nout = %d\n", out);
 	out = ft_printf("%5.3s", "1Ёж");
@@ -213,6 +213,11 @@ int	main(void)
 	out = printf("%.2ls", L"Ё");
 	printf("\nout = %d\n", out);
 	out = ft_printf("%.2ls", L"Ё");
+	printf("\nout = %d\n", out);
+
+	out = printf("%5lc", (char)123456);
+	printf("\nout = %d\n", out);
+	out = ft_printf("%5lc", (char)123456);
 	printf("\nout = %d\n", out);
 	return (0);
 }

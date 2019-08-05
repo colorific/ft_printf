@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 20:54:26 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/04 14:28:59 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/05 18:07:08 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ int			ft_str_type(t_printf *tprint)
 	if (tprint->flag & F_PREC && !tprint->prec && !tprint->width)
 		return (0);
 	if (!out)
-		return(ft_str_gen("(null)", tprint));
+		return (ft_str_gen("(null)", tprint));
 	if (tprint->flag & L_L)
-		return(ft_wstr_gen(out, tprint));
+		return (ft_wstr_gen(out, tprint));
 	else
 		return (ft_str_gen(out, tprint));
 }

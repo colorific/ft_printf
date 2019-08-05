@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/31 21:07:46 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/04 14:59:35 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/05 17:49:17 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ static int	ft_chr_gen(char c, t_printf *tprint)
 int			ft_char_type(t_printf *tprint)
 {
 	char	out;
-	char	w_out;
+	wint_t	w_out;
 
 	out = 0;
 	if (*tprint->str != '%')
 	{
 		if (tprint->flag & L_L)
-			w_out = va_arg(tprint->args, wchar_t);
+			w_out = va_arg(tprint->args, wint_t);
 		else
 			out = (char)va_arg(tprint->args, int);
 	}
