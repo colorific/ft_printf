@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 18:08:33 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 19:38:30 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int					ft_dprintf(int fd, const char *restrict format, ...);
 
 void				print_arg(char *str, t_printf *tprint);
 int					parse_format(t_printf *tprint, t_func f_table[]);
+void				parse_base(t_printf *t_print);
 
 int					ft_str_type(t_printf *tprint);
 int					ft_char_type(t_printf *tprint);

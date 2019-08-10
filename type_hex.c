@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hex_type.c                                         :+:      :+:    :+:   */
+/*   type_hex.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 17:35:04 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 19:06:25 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 19:20:18 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ static int				ft_gen_hex(unsigned long long in, t_printf *tprint)
 	char				*digit;
 	int					len;
 
-	digit = ft_strjoin(tprint->flag & F_HASH ? "0x" : "", ft_ulltoa_base(in, 16));
+	digit = ft_strjoin(tprint->flag & F_HASH ? "0x" : "", \
+						ft_ulltoa_base(in, 16));
 	if (tprint->flag & F_UP)
 		ft_strupr(digit);
 	len = ft_strlen(digit);
 	len = (tprint->flag & F_PREC && len < tprint->prec) ? tprint->prec : len;
 	filler = ft_strnew(len > tprint->width ? len : tprint->width);
-
 	ft_strdel(&digit);
 	ft_strdel(&filler);
 	return (len);
