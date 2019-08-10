@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 14:52:29 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 18:08:33 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct		s_printf
 	int				fd;
 	va_list			args;
 	char			*str;
+	int				base;
 }					t_printf;
 
 typedef int			(*t_handler)(t_printf *tprint);

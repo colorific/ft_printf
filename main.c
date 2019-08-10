@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 17:11:26 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 18:28:11 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,8 +183,9 @@ int	main(void)
 	printf ("%x\n", INT_MIN);
 	printf ("%x\n\n", INT_MAX);
 */
+
 	printf ("%lx\n", LONG_MIN);
-	ft_printf ("%lX\n", LONG_MIN);
+	ft_printf ("%lX #\n", LONG_MIN);
 	printf ("%lx\n\n", LONG_MAX);
 	ft_printf ("%#0.5lX\n\n", LONG_MAX);
 
@@ -192,7 +193,7 @@ int	main(void)
 	ft_printf ("%llx\n", LLONG_MIN);
 	printf ("%llx\n\n", LLONG_MAX);
 	ft_printf ("%llx\n\n", LLONG_MAX);
-/*
+
 	printf("%15.1%%s\n", "test");
 	ft_printf("%15.1%%s\n", "test");
 
@@ -201,14 +202,14 @@ int	main(void)
 	printf("\nout = %d\n", out);
 	out = ft_printf("%42.8ls", L"");
 	printf("\nout = %d\n", out);
- */
-	setlocale(LC_ALL, "en_US.UTF-8");
 
+	setlocale(LC_ALL, "en_US.UTF-8");
+/*
 	printf("%#13.10x\n", 256);
 	printf("%015.hhx\n", (unsigned char)234);
 	printf("%#13.10hx\n", (unsigned short)256);
 	printf("%#13.10lx\n", (unsigned long)256);
- /*
+
 	int out = printf("%4.3s", "1Ёжи");
 	printf("\nout = %d\n", out);
 	out = ft_printf("%4.3s", "1Ёжи");

@@ -6,11 +6,24 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 15:22:58 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 18:23:59 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static void parse_base(t_printf *t_print)
+{
+	int	base;
+
+	base = ft_atoi(t_print->str);
+	if (base && !(base % 2) && base <= 34)
+	{
+		t_print->base = base;
+		while (ft_isdigit(*t_print->str))
+			t_print->str++;
+	}
+}
 
 static void	parse_flags(t_printf *tprint)
 {
@@ -93,6 +106,7 @@ int			parse_format(t_printf *tprint, t_func f_table[])
 	int		i;
 
 	i = 0;
+	parse_base(tprint);
 	parse_flags(tprint);
 	parse_width(tprint);
 	parse_prec(tprint);
