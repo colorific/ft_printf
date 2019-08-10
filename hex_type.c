@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   hex_type.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 17:35:04 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 11:52:10 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/10 16:08:35 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*ft_uitoal_base(unsigned long long dgt, int base)
+static char				*ft_uitoal_base(unsigned long long dgt, int base)
 {
 	unsigned long long	temp;
 	int					i;
@@ -38,33 +38,47 @@ static char	*ft_uitoal_base(unsigned long long dgt, int base)
 	return (out);
 }
 
-static int	ft_gen_hex(unsigned long long in, t_printf *tprint)
+static int				ft_gen_hex(unsigned long long in, t_printf *tprint)
 {
-	char	*filler;
-	char	*digit;
-	int		len;
+	char				*filler;
+	char				*digit;
+	int					len;
 
-	(void)filler;
-	digit = ft_uitoal_base(in, 16);
+	digit = ft_strjoin(tprint->flag & F_HASH ? "0x" : "", ft_uitoal_base(in, 16));
+	if (tprint->flag & F_UP)
+		ft_strupr(digit);
 	len = ft_strlen(digit);
-	if (!in && !tprint->prec && tprint->flag & F_PREC)
-	;
-	return(0);
+	len = (tprint->flag & F_PREC && len < tprint->prec) ? tprint->prec : len;
+	filler = ft_strnew(len > tprint->width ? len : tprint->width);
+
+	ft_strdel(&digit);
+	ft_strdel(&filler);
+	return (len);
 }
 
-int			ft_hex_type(t_printf *tprint)
+int						ft_hex_type(t_printf *tprint)
 {
-	unsigned long long int out;
+	unsigned long long	out;
 
-	out = va_arg(tprint->args, unsigned long long int);
+	tprint->str++;
+	tprint->flag & (F_PREC | F_ZERO) ? tprint->flag &= ~F_ZERO : 0;
+	if (tprint->flag & F_PREC && !tprint->prec && !tprint->width)
+		return (0);
 	if (tprint->flag & L_HH)
-		return(ft_gen_hex((unsigned char)out, tprint));
+		out = (unsigned char)va_arg(tprint->args, int);
 	else if (tprint->flag & L_H)
-		return(ft_gen_hex((unsigned short int)out, tprint));
+		out = (unsigned short)va_arg(tprint->args, int);
 	else if (tprint->flag & L_L)
-		return(ft_gen_hex((unsigned long int)out, tprint));
+		out = va_arg(tprint->args, unsigned long);
 	else if (tprint->flag & L_LL)
-		return(ft_gen_hex(out, tprint));
+		out = va_arg(tprint->args, unsigned long long);
 	else
-		return(ft_gen_hex((unsigned int)out, tprint));
+		out = va_arg(tprint->args, unsigned int);
+	return (ft_gen_hex(out, tprint));
+}
+
+int						ft_bhex_type(t_printf *tprint)
+{
+	tprint->flag |= F_UP;
+	return (ft_hex_type(tprint));
 }

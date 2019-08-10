@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 17:32:31 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/05 17:48:28 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 14:52:29 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define L_LL		(1 << 8)
 # define L_BIGL		(1 << 9)
 # define F_PREC		(1 << 10)
+# define F_UP		(1 << 11)
 
 typedef struct		s_printf
 {

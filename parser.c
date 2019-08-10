@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/04 11:18:04 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 15:22:58 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ static void	parse_flags(t_printf *tprint)
 		tprint->flag |= (1 << (flag - haystack));
 		tprint->str++;
 	}
-	tprint->flag & F_ZERO && tprint->flag & F_MINUS ? \
-		tprint->flag &= ~F_ZERO : 0;
-	tprint->flag & F_PLUS && tprint->flag & F_SPACE ? \
-		tprint->flag &= ~F_SPACE : 0;
+	tprint->flag & (F_ZERO | F_MINUS) ? tprint->flag &= ~F_ZERO : 0;
+	tprint->flag & (F_PLUS | F_SPACE) ? tprint->flag &= ~F_SPACE : 0;
 	ft_memdel((void**)&haystack);
 }
 

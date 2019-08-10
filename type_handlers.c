@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   type_handlers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:25:32 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 11:50:46 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/10 14:58:46 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,6 @@ int			ft_oct_type(t_printf *tprint)
 }
 
 int			ft_unsgn_type(t_printf *tprint)
-{
-	(void)tprint;
-	return (0);
-}
-
-int			ft_bhex_type(t_printf *tprint)
 {
 	(void)tprint;
 	return (0);
