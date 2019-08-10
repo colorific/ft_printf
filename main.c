@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/05 18:09:13 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/07 19:09:49 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,19 +205,19 @@ int	main(void)
 	printf("%#13.10hx\n", (unsigned short)256);
 	printf("%#13.10lx\n", (unsigned long)256);
  */
-	int out = printf("%5.3s", "1Ёж");
+	int out = printf("%4.3s", "1Ёжи");
 	printf("\nout = %d\n", out);
-	out = ft_printf("%5.3s", "1Ёж");
-	printf("\nout = %d\n", out);
+	out = ft_printf("%4.3s", "1Ёжи");
+	printf("\nout = %d\n\n", out);
 
-	out = printf("%.2ls", L"Ё");
+	out = printf("%30ls", L"(╯°Д°)╯︵/(.□ . \\)");
 	printf("\nout = %d\n", out);
-	out = ft_printf("%.2ls", L"Ё");
-	printf("\nout = %d\n", out);
+	out = ft_printf("%30ls", L"(╯°Д°)╯︵/(.□ . \\)");
+	printf("\nout = %d\n\n", out);
 
-	out = printf("%5lc", (char)123456);
+	out = printf("%c", (char)123456);
 	printf("\nout = %d\n", out);
-	out = ft_printf("%5lc", (char)123456);
+	out = ft_printf("%c", (char)123456);
 	printf("\nout = %d\n", out);
 	return (0);
 }
