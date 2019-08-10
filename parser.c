@@ -6,9 +6,11 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 19:37:49 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 19:45:46 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 static void	parse_flags(t_printf *tprint)
 {
