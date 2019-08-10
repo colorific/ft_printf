@@ -6,7 +6,7 @@
 /*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/25 17:25:32 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 14:58:46 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/10 19:08:06 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ int			ft_ptr_type(t_printf *tprint)
 }
 
 int			ft_int_type(t_printf *tprint)
-{
-	(void)tprint;
-	return (0);
-}
-
-int			ft_oct_type(t_printf *tprint)
 {
 	(void)tprint;
 	return (0);

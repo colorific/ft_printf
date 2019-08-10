@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kirill <kirill@student.42.fr>              +#+  +:+       +#+         #
+#    By: forange- <forange-@student.fr.42>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/08 23:08:59 by kirill            #+#    #+#              #
-#    Updated: 2019/08/01 16:27:03 by kirill           ###   ########.fr        #
+#    Updated: 2019/08/10 19:17:30 by forange-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,14 @@ DIR_O = temporary
 
 HEADER = -I./$(LIBFT)
 
-SOURCES = ft_printf.c chr_type.c parser.c strings_type.c table.c type_handlers.c
+SOURCES = 	ft_printf.c		\
+			parser.c		\
+			table.c			\
+			type_chr.c		\
+			type_handlers.c	\
+			type_hex.c		\
+			type_oct.c		\
+			type_str.c
 
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
 
