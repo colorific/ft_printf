@@ -6,7 +6,7 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/10 19:37:40 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/11 11:51:55 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/11 13:00:44 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	parse_base(t_printf *t_print)
 	int	base;
 
 	t_print->base = 10;
-	if (*t_print->str == '_' && ft_isdigit(++*t_print->str))
+	if (*t_print->str == '_' && ft_isdigit(*(++t_print->str)))
 	{
 		base = ft_atoi(t_print->str);
 		if (base && !(base % 2) && base <= 34)
