@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/17 18:35:35 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/10 19:45:46 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/11 10:39:30 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,11 @@ int			parse_format(t_printf *tprint, t_func f_table[])
 	int		i;
 
 	i = 0;
-	parse_base(tprint);
 	parse_flags(tprint);
 	parse_width(tprint);
 	parse_prec(tprint);
 	parse_lenght(tprint);
+	parse_base(tprint);
 	while (i < TYPE_NUM)
 	{
 		if (*tprint->str == f_table[i].ch)

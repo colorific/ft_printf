@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: forange- <forange-@student.fr.42>          +#+  +:+       +#+         #
+#    By: kirill <kirill@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/08 23:08:59 by kirill            #+#    #+#              #
-#    Updated: 2019/08/10 19:17:30 by forange-         ###   ########.fr        #
+#    Updated: 2019/08/11 11:39:13 by kirill           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,8 @@ SOURCES = 	ft_printf.c		\
 			type_handlers.c	\
 			type_hex.c		\
 			type_oct.c		\
-			type_str.c
+			type_str.c		\
+			bonus.c
 
 OBJS = $(addprefix $(DIR_O)/,$(SOURCES:.c=.o))
 
