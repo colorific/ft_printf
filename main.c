@@ -6,7 +6,7 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/11 13:01:44 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/11 19:42:36 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,7 @@ int	main(void)
 //	ft_printf("%4c\n", 'a');
 //	printf("%-4c\n", 'a');
 //	ft_printf("%-4c\n", 'a');
-
+/*
 	printf("%%\n");
 	ft_printf("%%\n");
 
@@ -159,7 +159,7 @@ int	main(void)
 
 	printf("%-4%\n");
 	ft_printf("%-4%\n");
-
+ */
 	/*
 	int out = printf("%10.s\n", NULL);
 	printf("%d\n", out);
@@ -232,5 +232,14 @@ int	main(void)
 	out = ft_printf("%c", (char)123456);
 	printf("\nout = %d\n", out);
 */
+	ft_printf("ld = % -02Lf;\n\n\n", (float)0.545);
+
+	printf("%f\n", (float)0.545);
+	printf("%.f\n", (float)1.1);
+	printf("%#.f\n", (float)1.1);
+	printf("%10f\n", (float)0.545);
+	printf("%010f\n", (float)0.545);
+	printf("%10.1f\n", (float)0.545);
+	printf("%010.1f\n", (float)0.545);
 	return (0);
 }
