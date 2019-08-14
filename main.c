@@ -6,7 +6,7 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/11 19:42:36 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/14 21:30:47 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,11 +155,11 @@ int	main(void)
 	ft_printf("%%\n");
 
 	printf("%4%\n");
-	ft_printf("%4_%\n");
+	ft_printf("%4%\n");
 
 	printf("%-4%\n");
 	ft_printf("%-4%\n");
- */
+	 */
 	/*
 	int out = printf("%10.s\n", NULL);
 	printf("%d\n", out);
@@ -183,14 +183,27 @@ int	main(void)
 	printf ("%x\n", INT_MIN);
 	printf ("%x\n\n", INT_MAX);
 */
+	long double		ld;
 
-/*
-	int out = printf("abc╯ЁЖЗ %s abc╯ЁЖЗ", "ЙЛЯ");
+	ld = 3141500.314158887;
+	/*
+	printf("flag F_ZERO\n%12f||||||\n", (float)-1546545546654.545);
+	printf("%012f||||||\n", (float)-0.545);
+	printf("%12.1f||||||\n", (float)-0.545);
+	printf("%012.1f||||||\n", (float)-0.545);
+	printf("flag F_MINUS\n% 012f||||||\n", (float)0.545);
+	printf("%-12f||||||\n", (float)0.545);
+	printf("% 012.1f||||||\n", (float)0.545);
+	printf("%-12.1f||||||\n", (float)0.545);
+	*/
+	printf("ld = '% -12Lf';\n", ld);
+	ft_printf("ld = '% -12Lf';\n\n\n", ld);
+
+	int out = printf("%f", 0.000001);
 	printf("\nout = %d\n", out);
-	out = ft_printf("abc╯ЁЖЗ %s abc╯ЁЖЗ", "ЙЛЯ");
+	out = ft_printf("%f", 0.000001);
 	printf("\nout = %d\n", out);
-	 */
-/*
+
 	printf ("%lx\n", LONG_MIN);
 	ft_printf ("%lX #\n", LONG_MIN);
 	printf ("%lx\n\n", LONG_MAX);
@@ -201,17 +214,17 @@ int	main(void)
 	printf ("%llx\n\n", LLONG_MAX);
 	ft_printf ("%llx\n\n", LLONG_MAX);
 
-	printf("%15.1%%s\n", "test");
+	//printf("%15.1%%s\n", "test");
 	ft_printf("%15.1%%s\n", "test");
 
 	printf("%%#X INT_MAX ==  %#X\n", INT_MAX);
-	int out = printf("%42.8ls", L"");
+	out = printf("%42.8ls", L"");
 	printf("\nout = %d\n", out);
 	out = ft_printf("%42.8ls", L"");
 	printf("\nout = %d\n", out);
 
 	setlocale(LC_ALL, "en_US.UTF-8");
-
+/*
 	printf("%#13.10x\n", 256);
 	printf("%015.hhx\n", (unsigned char)234);
 	printf("%#13.10hx\n", (unsigned short)256);
@@ -232,14 +245,5 @@ int	main(void)
 	out = ft_printf("%c", (char)123456);
 	printf("\nout = %d\n", out);
 */
-	ft_printf("ld = % -02Lf;\n\n\n", (float)0.545);
-
-	printf("%f\n", (float)0.545);
-	printf("%.f\n", (float)1.1);
-	printf("%#.f\n", (float)1.1);
-	printf("%10f\n", (float)0.545);
-	printf("%010f\n", (float)0.545);
-	printf("%10.1f\n", (float)0.545);
-	printf("%010.1f\n", (float)0.545);
 	return (0);
 }
