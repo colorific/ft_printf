@@ -1,4 +1,3 @@
 [submodule "denis_printf"]
 	path = denis_printf
 	url = https://github.com/GlobchanskyDenis/ft_printf.git
-	ignore = dirty
