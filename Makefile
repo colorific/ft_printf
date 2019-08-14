@@ -6,7 +6,7 @@
 #    By: kirill <kirill@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/08 23:08:59 by kirill            #+#    #+#              #
-#    Updated: 2019/08/14 22:05:18 by kirill           ###   ########.fr        #
+#    Updated: 2019/08/14 22:18:40 by kirill           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,15 +24,16 @@ CFLAGS=-Wall -Wextra -Werror
 
 HEADER = -I./$(LIB) -I./$(LIB)/libft
 
-SOURCES = 	main.c
-
-OBJS = $(SOURCES:.c=.o)
-
 .PHONY: all clean fclean re build
 
 all: $(NAME)
 
 $(NAME): main.c
+	@make -C $(LIB) re
 	@echo "compiling binary with main.c to /bin/out"
-	@mkdir -p bin
+	@mkdir -p $(BIN_DIR)
 	@$(CC) $(FLAGS) $(HEADER) main.c -L./$(LIB) -lftprintf -o $(BIN)
+
+fclean:
+	@make -C $(LIB) fclean
+	@rm -rf $(BIN_DIR)
