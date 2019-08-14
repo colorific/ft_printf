@@ -13,8 +13,9 @@
                 "-o",
                 "${fileDirname}/bin/${fileBasenameNoExtension}",
                 "-I./denis_printf/libft/",
-                "-L./denis_printf/libft/",
-                "-lft"
+                "-I./denis_printf/",
+                "-L./denis_printf/",
+                "-lftprintf"
             ],
             "options": {
                 "cwd": "${cwd}"

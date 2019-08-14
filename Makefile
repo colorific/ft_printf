@@ -6,7 +6,7 @@
 #    By: kirill <kirill@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/08 23:08:59 by kirill            #+#    #+#              #
-#    Updated: 2019/08/14 22:18:40 by kirill           ###   ########.fr        #
+#    Updated: 2019/08/15 00:33:06 by kirill           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ CC=gcc
 LIB = denis_printf
 
 CFLAGS=-Wall -Wextra -Werror
+ifdef dbg
+	CFLAGS += -g
+endif
 
 HEADER = -I./$(LIB) -I./$(LIB)/libft
 
@@ -29,7 +32,7 @@ HEADER = -I./$(LIB) -I./$(LIB)/libft
 all: $(NAME)
 
 $(NAME): main.c
-	@make -C $(LIB) re
+	@$(MAKE) -C $(LIB) re
 	@echo "compiling binary with main.c to /bin/out"
 	@mkdir -p $(BIN_DIR)
 	@$(CC) $(FLAGS) $(HEADER) main.c -L./$(LIB) -lftprintf -o $(BIN)
