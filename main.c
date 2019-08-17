@@ -6,13 +6,14 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/14 21:30:47 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/17 13:29:50 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <limits.h>
 #include <locale.h>
+#include <float.h>
 #include "ft_printf.h"
 
 int	main(void)
@@ -196,10 +197,13 @@ int	main(void)
 	printf("% 012.1f||||||\n", (float)0.545);
 	printf("%-12.1f||||||\n", (float)0.545);
 	*/
-	printf("ld = '% -12Lf';\n", ld);
-	ft_printf("ld = '% -12Lf';\n\n\n", ld);
 
-	int out = printf("%f", 0.000001);
+	int out = printf("% -5.3f", 7.3);
+	printf("\nout = %d\n", out);
+	out = ft_printf("% -5.3f", 7.3);
+	printf("\nout = %d\n\n", out);
+
+	out = printf("%f", 0.000001);
 	printf("\nout = %d\n", out);
 	out = ft_printf("%f", 0.000001);
 	printf("\nout = %d\n", out);
