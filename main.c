@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
+/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/17 13:29:50 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/18 00:25:39 by forange-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ int	main(void)
 	printf("%-12.1f||||||\n", (float)0.545);
 	*/
 
-	int out = printf("% -5.3f", 7.3);
+/* 	int out = printf("% -5.3f", 7.3);
 	printf("\nout = %d\n", out);
 	out = ft_printf("% -5.3f", 7.3);
 	printf("\nout = %d\n\n", out);
@@ -207,6 +207,17 @@ int	main(void)
 	printf("\nout = %d\n", out);
 	out = ft_printf("%f", 0.000001);
 	printf("\nout = %d\n", out);
+ */
+	printf("%#010x\n", 6);
+	printf("%#010.4x\n", 6);
+	printf("%010.4x\n", 6);
+	printf("%#10x\n", 6);
+	printf("%#10.4x\n", 6);
+	printf("%10.4x\n", 6);
+	printf("%10.4x\n", 6);
+
+	printf("%05x\n", 0);
+	ft_printf("%05x\n", 0);
 
 	printf ("%lx\n", LONG_MIN);
 	ft_printf ("%lX #\n", LONG_MIN);
@@ -222,18 +233,22 @@ int	main(void)
 	ft_printf("%15.1%%s\n", "test");
 
 	printf("%%#X INT_MAX ==  %#X\n", INT_MAX);
-	out = printf("%42.8ls", L"");
+	int out = printf("%42.8ls", L"");
 	printf("\nout = %d\n", out);
 	out = ft_printf("%42.8ls", L"");
-	printf("\nout = %d\n", out);
+	printf("\nout = %d\n\n", out);
 
-	setlocale(LC_ALL, "en_US.UTF-8");
+//	setlocale(LC_ALL, "en_US.UTF-8");
+// для X игнорируются +  и ' '
+	out = printf("%0#6.1x", 256);
+		printf("\nout = %d\n", out);
+	out = printf("%015.hhx", (unsigned char)234);
+		printf("\nout = %d\n", out);
+	out = printf("%#14.10hx", (unsigned short)256);
+		printf("\nout = %d\n", out);
+	out = printf("%#13.10lx", (unsigned long)256);
+		printf("\nout = %d\n", out);
 /*
-	printf("%#13.10x\n", 256);
-	printf("%015.hhx\n", (unsigned char)234);
-	printf("%#13.10hx\n", (unsigned short)256);
-	printf("%#13.10lx\n", (unsigned long)256);
-
 	int out = printf("%4.3s", "1Ёжи");
 	printf("\nout = %d\n", out);
 	out = ft_printf("%4.3s", "1Ёжи");
