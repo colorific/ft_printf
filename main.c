@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: forange- <forange-@student.fr.42>          +#+  +:+       +#+        */
+/*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/18 00:25:39 by forange-         ###   ########.fr       */
+/*   Updated: 2019/08/18 21:37:34 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,14 +208,34 @@ int	main(void)
 	out = ft_printf("%f", 0.000001);
 	printf("\nout = %d\n", out);
  */
-	printf("%#010x\n", 6);
-	printf("%#010.4x\n", 6);
-	printf("%010.4x\n", 6);
-	printf("%#10x\n", 6);
-	printf("%#10.4x\n", 6);
-	printf("%10.4x\n", 6);
-	printf("%10.4x\n", 6);
+	printf("%i|%-i|%+i|% i|%0i\n", 0, 0, 0, 0, 0);
+	//ft_printf("%i|%-i|%+i|% i|%0i\n", 0, 0, 0, 0, 0);
 
+	printf("%23d|%-23d|%+23d|% 23d|%023d\n", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN);
+	ft_printf("%23d|%-23d|%+23d|% 23d|%023d\n", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN);
+/*
+	printf("%u\n", -1);
+	ft_printf("%u\n", -1);
+
+	printf("%u\n", 6);
+	printf("%.u\n", 6);
+	printf("%.5u\n", 6);
+	printf("%10.u\n", 6);
+	printf("%10.5u\n", 6);
+	printf("%10u\n", 6);
+	printf("%010u\n", 6);
+	printf("%010.u\n----------\n\n", 6);
+
+	printf("%u\n", 0);
+	printf("%.u\n", 0);
+	printf("%.5u\n", 0);
+	printf("%10.u\n", 0);
+	printf("%10.5u\n", 0);
+	printf("%10u\n", 0);
+	printf("%010u\n", 0);
+	printf("%010.u\n", 0);
+	printf("%010.5u\n", 0);
+ *//*
 	printf("%05x\n", 0);
 	ft_printf("%05x\n", 0);
 
@@ -248,7 +268,7 @@ int	main(void)
 		printf("\nout = %d\n", out);
 	out = printf("%#13.10lx", (unsigned long)256);
 		printf("\nout = %d\n", out);
-/*
+ *//*
 	int out = printf("%4.3s", "1Ёжи");
 	printf("\nout = %d\n", out);
 	out = ft_printf("%4.3s", "1Ёжи");

@@ -6,7 +6,7 @@
 #    By: kirill <kirill@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/08 23:08:59 by kirill            #+#    #+#              #
-#    Updated: 2019/08/15 00:47:14 by kirill           ###   ########.fr        #
+#    Updated: 2019/08/18 10:52:35 by kirill           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ HEADER = -I./$(LIB) -I./$(LIB)/libft
 all: $(NAME)
 
 $(NAME): main.c
-	@$(MAKE) -C $(LIB) re
+	@$(MAKE) -C $(LIB)
 	@echo "compiling binary with main.c to /bin/out"
 	@mkdir -p $(BIN_DIR)
 	@$(CC) $(FLAGS) $(HEADER) main.c -L./$(LIB) -lftprintf -o $(BIN)
