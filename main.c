@@ -6,7 +6,7 @@
 /*   By: kirill <kirill@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 15:49:57 by forange-          #+#    #+#             */
-/*   Updated: 2019/08/18 21:37:34 by kirill           ###   ########.fr       */
+/*   Updated: 2019/08/22 01:49:51 by kirill           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,11 +208,24 @@ int	main(void)
 	out = ft_printf("%f", 0.000001);
 	printf("\nout = %d\n", out);
  */
+	int out = printf("o %*d|%-*d|%+*d|% *d|%0*d\n", INT_MIN, 0, INT_MIN, 0, INT_MIN, 0, INT_MIN, 0, INT_MIN, 0);
+	printf("out = %d\n", out);
+	int out2 = ft_printf("m %*d|%-*d|%+*d|% *d|%0*d\n", INT_MIN, 0, INT_MIN, 0, INT_MIN, 0, INT_MIN, 0, INT_MIN, 0);
+	printf("out2 = %d\n", out2);
+
+
+/*
 	printf("%i|%-i|%+i|% i|%0i\n", 0, 0, 0, 0, 0);
 	//ft_printf("%i|%-i|%+i|% i|%0i\n", 0, 0, 0, 0, 0);
+	printf("%ld|%-ld|%+ld|% ld|%0ld\n", (long)LLONG_MIN, (long)LLONG_MIN, (long)LLONG_MIN, (long)LLONG_MIN, (long)LLONG_MIN);
+	ft_printf("%ld|%-ld|%+ld|% ld|%0ld\n", (long)LLONG_MIN, (long)LLONG_MIN, (long)LLONG_MIN, (long)LLONG_MIN, (long)LLONG_MIN);
 
 	printf("%23d|%-23d|%+23d|% 23d|%023d\n", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN);
-	ft_printf("%23d|%-23d|%+23d|% 23d|%023d\n", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN);
+	ft_printf("%23d|%-23d|%+23d|% 23d|%023d\n\n", INT_MIN, INT_MIN, INT_MIN, INT_MIN, INT_MIN);
+
+	printf("%.5d|%-.5d|%+.5d|% .5d|%0.5d\n", (int)LLONG_MAX, (int)LLONG_MAX, (int)LLONG_MAX, (int)LLONG_MAX, (int)LLONG_MAX);
+	ft_printf("%.5d|%-.5d|%+.5d|% .5d|%0.5d\n\n", (int)LLONG_MAX, (int)LLONG_MAX, (int)LLONG_MAX, (int)LLONG_MAX, (int)LLONG_MAX);
+ */
 /*
 	printf("%u\n", -1);
 	ft_printf("%u\n", -1);
